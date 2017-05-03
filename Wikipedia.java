@@ -26,21 +26,19 @@ public class Wikipedia implements CITS2200Project
 	@Override
 	public void addEdge(String from, String to) 
 	{
-		boolean contFrom = false, contTo = false, check = false;
+		boolean contFrom = false, contTo = false;
 		
 		//Checks if the ArrayList of LinkedLists contains the URL's of the "to" and "from"
 		for( LinkedList<String> s: page )
 		{
-			if( s.contains(to) );	
+			if( s.get(0).equals(to) );	
 				contTo = true;
 			
 			//If the ArrayList does contain the "from" URL, adds the "to" URL to it
-			if( s.contains(from) && check == false)
+			if( s.get(0).equals(from))
 			{
 				contFrom = true;
 				page.get(page.indexOf(s)).add(to);
-				
-				check = true;
 			}
 		}
 		

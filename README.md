@@ -2,10 +2,10 @@
 The 2017 project for DSA
 
 Completed:
-  addEdge();
+  addEdge(), 
 
 Remaining:
-  getShortestPath()
-  getCenters()
-  getStronglyConnectedComponents()
-  getHamiltonianPath()
+  getShortestPath(), 
+  getCenters(), 
+  getStronglyConnectedComponents(), 
+  getHamiltonianPath(), 

@@ -4,32 +4,55 @@ public class test1 {
 	public static void main(String[] args)
 	{
 		WikiO x = new WikiO();
-		x.addEdge("Harambe", "Child");
-		x.addEdge("Child", "Harambe");
-		x.addEdge("Child", "Mother");
-		x.addEdge("Mother", "Father");
-		x.addEdge("Mother", "Mammal");
-		x.addEdge("Mother", "Theresa");
-		x.addEdge("Father", "Church");
-		x.addEdge("Father", "John");
-		x.addEdge("John", "Human");
-		x.addEdge("Church", "Human");
-		x.addEdge("Mammal", "Human");
-		x.printGraph();
-		System.out.println();
-		System.out.println(x.getShortestPath("Harambe", "Human"));
-		System.out.println();
-//		
 //		x.addEdge("1", "2");
-//		x.addEdge("1", "3");
+//		x.addEdge("2", "3");
+//		x.addEdge("3", "4");
+//		x.addEdge("3", "5");
+//		x.addEdge("3", "6");
+//		x.addEdge("4", "7");
+//		x.addEdge("4", "8");
+//		x.addEdge("8", "9");
+//		x.addEdge("7", "9");
+//		x.addEdge("5", "9");
+		WikiO.printGraph(x.page);
+//		System.out.println(x.getShortestPath("2", "9"));
+		
+//		x.addEdge("1", "2");
 //		x.addEdge("3", "2");
-//		x.printGraph();
+//		x.addEdge("3", "5");
+		
+		x.addEdge("1","2");
+		x.addEdge("2","3");
+		x.addEdge("3","4");
+		x.addEdge("4","5");
+		x.addEdge("5","2");
+		x.addEdge("5","3");
+		x.addEdge("5","6");
+		x.addEdge("4","6");
+		x.addEdge("7","3");
+		x.addEdge("7","8");
+
+		WikiO.printGraph(x.page);
+		
 		System.out.println();
-		String[] pepe = x.getCenters();
-		for(String eee : pepe)
+		
+		WikiO.printGraph(Graph.transpose(x.page));
+		
+		System.out.println();
+		
+		String[][] a = x.getStronglyConnectedComponents();
+		for(String[] b: a)
 		{
-			System.out.print(eee + "\t");
+			for(String c: b)
+				System.out.print(c + " ");
+			System.out.println();
 		}
+		
+		
+		
+//		WikiO.printGraph(Graph.transpose(x.page));
+		
+//		x.printGraph();
 	}
 
 }

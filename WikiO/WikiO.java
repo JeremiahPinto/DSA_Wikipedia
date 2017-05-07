@@ -11,6 +11,7 @@ public class WikiO implements CITS2200Project
 {
 	// Make private later
 	public Graph page;
+	private boolean check;
 	
 	public WikiO()
 	{
@@ -269,8 +270,34 @@ public class WikiO implements CITS2200Project
 	@Override
 	public String[] getHamiltonianPath() 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		LinkedList<Integer> path = new LinkedList<Integer>();
+		check = true;
+		ham(page, path, 0);
+		String[] pathString = new String[path.size()];
+		for (int i = 0; i < pathString.length; i++) {
+			pathString[i]=page.getVertex(path.get(i));
+		}
+		return pathString;
+	}
+	
+	private void ham(Graph G, LinkedList<Integer> path, int vertex)
+	{
+		path.add(vertex);
+
+		for(int x = 1; x < G.getRow(vertex).size(); x++) //Children of vertex
+		{
+			if(G.getRow(vertex).get(x) == path.get(0) && path.size() == G.size()){
+				path.add(G.getRow(vertex).get(x));
+				check = false;
+				if(!check) break;
+			}
+			else if(!path.contains(G.getRow(vertex).get(x)))
+			{
+				ham(G, path, G.getRow(vertex).get(x));
+				if(!check) break;
+			}
+		}
+		if(check) path.removeLast();
 	}
 	
 	public static void printGraph(Graph G)

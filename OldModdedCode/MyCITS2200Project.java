@@ -382,7 +382,7 @@ public class MyCITS2200Project implements CITS2200Project
 		
 		//***************************************************************
 		
-		// Backtracking to reconstruct path
+		// Reconstruct path
 		
 		int[] order = new int[n];
 		int last = -1, cur = (1 << n) - 1, bj;

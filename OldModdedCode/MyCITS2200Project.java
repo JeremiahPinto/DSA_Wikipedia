@@ -12,7 +12,7 @@ import java.util.LinkedList;
 class Graph
 {
 	private ArrayList<LinkedList<Integer>> p; //Adjacency list of the edges in the graph
-	private LinkedList<String> s;			  //List of all the vertices
+	private LinkedList<String> s;		  //List of all the vertices
 	public static final int INFINITY = Integer.MAX_VALUE/2;
 
 	Graph()

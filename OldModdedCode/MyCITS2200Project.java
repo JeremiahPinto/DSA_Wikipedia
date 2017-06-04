@@ -88,15 +88,19 @@ class Graph
 		return INFINITY;
 	}
 
+	//A method that returns the vertex at the index paseed as parameter
 	String getVertex( int i ) 
 	{	return s.get(i);	}
 
+	//A method that returns the row at index i
 	LinkedList<Integer> getRow( int i ) 
 	{	return p.get(i);	}
 
+	//A method that returns the size of the String matrix, s
 	int size()
 	{	return s.size();	}
 
+	//A method that returns the transpose of the graph sent as parameter
 	static Graph transpose( Graph G )
 	{
 		Graph RG = new Graph();
@@ -118,9 +122,9 @@ class Graph
 		return RG;
 	}
 }
+
 public class MyCITS2200Project implements CITS2200Project
 {
-
 	public Graph page;
 	
 	public MyCITS2200Project()
